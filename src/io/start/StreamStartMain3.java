@@ -15,8 +15,7 @@ public class StreamStartMain3 {
 
         FileInputStream fileInputStream = new FileInputStream("temp/hello.dat");
         byte[] bytes = fileInputStream.readAllBytes();
-        System.out.println(Arrays.toString(bytes));
+        System.out.println(Arrays.toString(bytes)); // [65, 66, 67, 68]
         fileInputStream.close();
-        // [65, 66, 67, 68]
     }
 }
