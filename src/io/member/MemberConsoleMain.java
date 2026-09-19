@@ -1,13 +1,14 @@
 package io.member;
 
-import io.member.impl.MemoryMemberRepository;
+import io.member.impl.FileMemberRepository;
 
 import java.util.List;
 import java.util.Scanner;
 
 public class MemberConsoleMain {
 
-    private static final MemberRepository repository = new MemoryMemberRepository();
+    //    private static final MemberRepository repository = new MemoryMemberRepository();
+    private static final MemberRepository repository = new FileMemberRepository();
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -49,6 +50,7 @@ public class MemberConsoleMain {
     }
 
     private static void displayMembers() {
+        System.out.println("회원 목록: ");
         List<Member> members = repository.findAll();
         for (Member member : members) {
             System.out.printf("[ID = %s, 이름 = %s, 나이 = %d]\n", member.getId(), member.getName(), member.getAge());
