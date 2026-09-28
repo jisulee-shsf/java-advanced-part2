@@ -26,7 +26,7 @@ public class WriteHandler implements Runnable {
 
         try {
             String username = inputUsername(scanner);
-            outputStream.writeUTF("/join " + DELIMITER + username);
+            outputStream.writeUTF("/join" + DELIMITER + username);
 
             while (true) {
                 String toSend = scanner.nextLine();
@@ -35,6 +35,7 @@ public class WriteHandler implements Runnable {
                 }
 
                 if (toSend.equals("/exit")) {
+                    outputStream.writeUTF(toSend);
                     break;
                 }
 
