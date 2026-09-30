@@ -1,13 +1,13 @@
-package was.v1;
+package was.v2;
 
 import java.io.IOException;
 
-public class HttpServerMain {
+public class HttpServerMainV2 {
 
     private static final int PORT = 12345;
 
     public static void main(String[] args) throws IOException {
-        HttpServerV1 httpServer = new HttpServerV1(PORT);
+        HttpServerV2 httpServer = new HttpServerV2(PORT);
         httpServer.start();
     }
 }
