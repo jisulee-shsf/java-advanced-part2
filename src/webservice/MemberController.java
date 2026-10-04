@@ -67,8 +67,18 @@ public class MemberController {
     }
 
     @Mapping("/add-member")
-    public void addMember(HttpRequest request) {
+    public void addMember(HttpRequest request, HttpResponse response) {
         log("MemberController.addMember");
         log("request: " + request);
+
+        String id = request.getParameter("id");
+        String name = request.getParameter("name");
+        int age = Integer.parseInt(request.getParameter("age"));
+
+        Member member = new Member(id, name, age);
+        memberRepository.add(member);
+
+        response.writeBody("<h1>Member Saved</h1>");
+        response.writeBody("<a href='/'>Back To Home</a>");
     }
 }
